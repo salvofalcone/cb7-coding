@@ -24,7 +24,7 @@
 // let operationChoice = prompt("Che operazione vuoi eseguire?");
 
 // switch (operationChoice) {
-//   case "+":
+//   case ("+", "addizione"):
 //     result = firstNumb + secondNumb;
 //     console.log(
 //       "Hai scelto la somma! Ecco il tuo risultato",
@@ -36,7 +36,7 @@
 //     );
 //     break;
 
-//   case "-":
+//   case ("-", "sottrazione", "differenza"):
 //     result = firstNumb - secondNumb;
 //     console.log(
 //       "Hai scelto la differenza! Ecco il tuo risultato",
@@ -48,7 +48,7 @@
 //     );
 //     break;
 
-//   case "/":
+//   case ("/", "divisione", "rapporto", "quoziente"):
 //     result = firstNumb / secondNumb;
 //     console.log(
 //       "Hai scelto la divisione! Ecco il tuo risultato",
@@ -60,7 +60,7 @@
 //     );
 //     break;
 
-//   case "*":
+//   case ("*", "moltiplicazione", "prodotto"):
 //     result = firstNumb * secondNumb;
 //     console.log(
 //       "Hai scelto la moltiplicazione! Ecco il tuo risultato",
