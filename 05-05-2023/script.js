@@ -1,8 +1,6 @@
 // Esercizio 1
 
 // -------------------------------------------------
-// -------------------------------------------------
-// -------------------------------------------------
 
 // ------- ESERCIZIO 2 -------
 // (come consigliato da Casimiro ho fatto il secondo esercizio usando una sola funzione)
@@ -35,9 +33,6 @@ function calc() {
 var result = calc();
 console.log("Il risultato dell'operazione è: "+ result);
 
-
-// -------------------------------------------------
-// -------------------------------------------------
 // -------------------------------------------------
 
 // ------- ESERCIZIO 3 -------
@@ -61,9 +56,6 @@ console.log("Il risultato dell'operazione è: "+ result);
 // );
 // console.log("Contattami a questa mail: " + person.contact.email);
 
-
-// -------------------------------------------------
-// -------------------------------------------------
 // -------------------------------------------------
 
 // ------- AVANZATO -------
