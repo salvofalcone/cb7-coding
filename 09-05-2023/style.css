@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+h2 {
+  color: rgb(158, 0, 0);
+  padding-bottom: 6px;
+}
+
+/* HEADER */
+header {
+  background-color: rgba(17, 126, 59, 0.815);
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.hamburger {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.line {
+  width: 100%;
+  height: 4px;
+  background-color: black;
+  border-radius: 5px;
+}
+/* END HEADER */
+
+/* MAIN */
+.tendina {
+  width: 300px;
+  height: calc(100vh - 80px - 80px);
+  background-color: rgba(59, 56, 56, 0.477);
+  color: white;
+  padding: 20px;
+  font-size: 24px;
+  position: absolute;
+  /* top: 0; */
+  left: -400px;
+  transition: 0.5s;
+}
+
+.show {
+  left: 0;
+}
+
+.tendina ul {
+  list-style: none;
+}
+
+main {
+  flex-grow: 1;
+  overflow-x: scroll;
+  padding-bottom: 90px;
+}
+
+/* Esercizio 1 */
+.exOne {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: rgba(17, 126, 59, 0.5);
+}
+
+.btn:hover {
+  background-color: rgba(52, 128, 163, 0.739);
+  transition: all 400ms;
+}
+
+/* Esercizio 2 */
+.exTwo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+#form {
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+  align-items: center;
+}
+
+#form button {
+  width: fit-content;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: rgba(17, 126, 59, 0.5);
+}
+
+#form button:hover {
+  background-color: rgba(52, 128, 163, 0.739);
+  transition: all 400ms;
+}
+
+/* Esercizio 3 */
+.exThree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+/* END MAIN */
+
+/* FOOTER */
+footer {
+  background-color: rgba(17, 126, 59, 0.815);
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* END FOOTER */
