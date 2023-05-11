@@ -15,9 +15,13 @@ const listItemGen = (todoData) => {
   if (todoData.completed) listItemEl.classList.add("listCompleted");
 
   buttonRemover.textContent = "x";
-  buttonRemover.classList = "buttonList";
+  buttonRemover.classList = "buttonRemover";
 
   listItemEl.append(buttonRemover);
+
+  buttonRemover.addEventListener("click", () => {
+    listItemEl.remove();
+  });
 
   return listItemEl;
 };
