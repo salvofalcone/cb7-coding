@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=VT323&display=swap");
+
+/* 
+font-family: 'Righteous', cursive;
+font-family: 'VT323', monospace; 
+*/
+
+:root {
+  --backgroundColor: #e3dfdc;
+  --operationColor: #eab072;
+  --cancelColor: #dc6428;
+  --equalColor: #a49daa;
+  --padColor: #dc6428;
+}
+
+body {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parent {
+  font-family: "Righteous", cursive;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
+
+  background-color: var(--backgroundColor);
+  height: 800px;
+  width: 400px;
+  border-radius: 12px;
+  font-size: 32px;
+}
+
+.parent > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25), 0 0 2px rgba(0, 0, 0, 0.25),
+    0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.parent > *:hover {
+  transform: scale(1.04);
+  cursor: pointer;
+}
+
+.number {
+  background-color: #f5f0ec;
+  border: 12px solid #e4d8cb;
+}
+
+.operationColor {
+  background-color: var(--operationColor);
+}
+
+.resultScreen {
+  background-color: #bfbfa2;
+  border: 12px solid #1a1a1a;
+  box-shadow: inset 0 0 8px 8px rgba(0, 0, 0, 0.156);
+}
+
+.resultScreen:hover{
+    transform: scale(1);
+}
+
+/* ================================ */
+
+/* OPERATORI */
+.operation {
+  background-color: var(--operationColor);
+  border: 12px solid #e39744;
+}
+
+#equal {
+  grid-area: 8 / 4 / 9 / 5;
+  background-color: var(--equalColor);
+  border: 12px solid #8a8192;
+}
+
+/****************** STRUTTURA GRID ******************/
+/* NUMERI */
+#zero {
+  grid-area: 8 / 1 / 9 / 3;
+}
+
+#one {
+  grid-area: 7 / 1 / 8 / 2;
+}
+
+#two {
+  grid-area: 7 / 2 / 8 / 3;
+}
+
+#three {
+  grid-area: 7 / 3 / 8 / 4;
+}
+
+#four {
+  grid-area: 6 / 1 / 7 / 2;
+}
+
+#five {
+  grid-area: 6 / 2 / 7 / 3;
+}
+
+#six {
+  grid-area: 6 / 3 / 7 / 4;
+}
+
+#seven {
+  grid-area: 5 / 1 / 6 / 2;
+}
+
+#eight {
+  grid-area: 5 / 2 / 6 / 3;
+}
+
+#nine {
+  grid-area: 5 / 3 / 6 / 4;
+}
+
+#plus {
+  grid-area: 7 / 4 / 8 / 5;
+}
+
+#dif {
+  grid-area: 6 / 4 / 7 / 5;
+}
+
+#prod {
+  grid-area: 5 / 4 / 6 / 5;
+}
+
+#rap {
+  grid-area: 4 / 4 / 5 / 5;
+}
+
+#resultScreen {
+  grid-area: 2 / 1 / 4 / 5;
+}
+
+#dot {
+  grid-area: 8 / 3 / 9 / 4;
+}
+
+#upTwo {
+  grid-area: 4 / 1 / 5 / 2;
+}
+#upThree {
+  grid-area: 4 / 2 / 5 / 3;
+}
+#squareRoot {
+  grid-area: 4 / 3 / 5 / 4;
+}
+
