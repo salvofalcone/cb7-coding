@@ -21,7 +21,7 @@ body {
   justify-content: center;
 }
 
-.parent {
+.keypad {
   font-family: "Righteous", cursive;
   padding: 30px;
   display: grid;
@@ -40,7 +40,7 @@ body {
   0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
-.parent > * {
+.keypad > * {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,7 +49,7 @@ body {
     0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
-.parent > *:hover {
+.keypad > *:hover {
   transform: scale(1.04);
   cursor: pointer;
 }
@@ -74,6 +74,10 @@ body {
 }
 
 /* ================================ */
+.cancel {
+  background-color: #e35f44a7;
+  border: 12px solid #e35f44;
+}
 
 /* OPERATORI */
 .operation {
@@ -159,7 +163,7 @@ body {
 #upThree {
   grid-area: 4 / 2 / 5 / 3;
 }
-#squareRoot {
+#cancelBtn {
   grid-area: 4 / 3 / 5 / 4;
 }
 

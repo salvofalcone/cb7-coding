@@ -9,11 +9,69 @@ const plusBtn = qS("#plus");
 const difBtn = qS("#dif");
 const prodBtn = qS("#prod");
 const rapBtn = qS("#rap");
-const squareRootBtn = qS("#squareRoot");
 const upTwoBtn = qS("#upTwo");
 const upThreeBtn = qS("#upThree");
-const resultScreen = qS(".resultScreen");
+const resultScreen = qS("#resultScreen");
 
+const cancelBtn = qS("#cancelBtn");
+
+const zeroBtn = qS("#zero");
+const oneBtn = qS("#one");
+const twoBtn = qS("#two");
+const threeBtn = qS("#three");
+const fourBtn = qS("#four");
+const fiveBtn = qS("#five");
+const sixBtn = qS("#six");
+const sevenBtn = qS("#seven");
+const eightBtn = qS("#eight");
+const nineBtn = qS("#nine");
+
+// =====================================================
+/* Test aggiunta numeri schermo */
+zeroBtn.addEventListener("click", () => {
+  resultScreen.textContent += 0;
+});
+
+oneBtn.addEventListener("click", () => {
+  resultScreen.textContent += 1;
+});
+
+twoBtn.addEventListener("click", () => {
+  resultScreen.textContent += 2;
+});
+
+threeBtn.addEventListener("click", () => {
+  resultScreen.textContent += 3;
+});
+
+fourBtn.addEventListener("click", () => {
+  resultScreen.textContent += 4;
+});
+
+fiveBtn.addEventListener("click", () => {
+  resultScreen.textContent += 5;
+});
+
+sixBtn.addEventListener("click", () => {
+  resultScreen.textContent += 6;
+});
+
+sevenBtn.addEventListener("click", () => {
+  resultScreen.textContent += 7;
+});
+
+eightBtn.addEventListener("click", () => {
+  resultScreen.textContent += 8;
+});
+
+nineBtn.addEventListener("click", () => {
+  resultScreen.textContent += 9;
+});
+
+cancelBtn.addEventListener("click", () => {
+  resultScreen.textContent = null;
+  RISULTATO = 0;
+});
 // =====================================================
 
 /*  FUNZIONI OPERAZIONI  */
@@ -24,49 +82,61 @@ const rap = (a, b) => a / b;
 
 // =====================================================
 
-const firstNumb = 10;
-const secondNumb = 5;
-
-// ZONA RISULTATO
-resultScreen.textContent = "Risultato";
-
-// =====================================================
+// mi servono come stringa al momento così le posso concatenare sullo schermo
+let firstNumb = null;
+let secondNumb = null;
+let operation = null;
+let RISULTATO = 0;
 
 // =====================================================
 
-equalBtn.addEventListener("click", () => {
-  console.log("Hai premuto =");
-});
+function operationChoice() {
+  // prendo la stringa contenuta in resultScreen e la trasformo in numero
+  let temp = parseFloat(qS("#resultScreen").innerHTML);
 
+  //svuoto resultScreen
+
+  resultScreen.textContent = " ";
+  // operazione corrispondente
+  RISULTATO += temp;
+}
+
+function operationSUM() {
+  // prendo la stringa contenuta in resultScreen e la trasformo in numero
+  let temp = parseFloat(qS("#resultScreen").innerHTML);
+
+  //svuoto resultScreen
+  resultScreen.textContent = " ";
+
+  // operazione corrispondente
+  RISULTATO += temp;
+}
+
+// =====================================================
+
+/* operazioni */
 plusBtn.addEventListener("click", () => {
-  console.log(sum(firstNumb, secondNumb));
-  resultScreen.textContent = sum(firstNumb, secondNumb);
+  operationSUM();
 });
 
 difBtn.addEventListener("click", () => {
-  console.log(dif(firstNumb, secondNumb));
-  resultScreen.textContent = dif(firstNumb, secondNumb);
+  operationChoice();
 });
 
 prodBtn.addEventListener("click", () => {
-  console.log(prod(firstNumb, secondNumb));
-  resultScreen.textContent = prod(firstNumb, secondNumb);
+  operationChoice();
 });
 
 rapBtn.addEventListener("click", () => {
-  console.log(rap(firstNumb, secondNumb));
-  resultScreen.textContent = rap(firstNumb, secondNumb);
+  operationChoice();
+});
+
+equalBtn.addEventListener("click", () => {
+  operationChoice();
+  resultScreen.textContent = RISULTATO;
 });
 
 // DA IMPLEMENTARE
-squareRootBtn.addEventListener("click", () => {
-  alert("Non sono ancora pronto! 😂");
-});
-
-squareRootBtn.addEventListener("click", () => {
-  alert("Non sono ancora pronto! 😂");
-});
-
 upTwoBtn.addEventListener("click", () => {
   alert("Non sono ancora pronto! 😂");
 });
