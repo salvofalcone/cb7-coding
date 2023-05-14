@@ -1,76 +1,56 @@
-const todos = [];
-
 const cE = (element) => document.createElement(element);
 const qS = (element) => document.querySelector(element);
-const qSA = (elements) => document.querySelectorAll(elements);
+// const qSA = (elements) => document.querySelectorAll(elements
 
-const listItemGen = (todoData) => {
-  const listItemEl = cE("li");
-  const buttonRemover = cE("button");
+// ======================================================================
+const toDoMain = cE("ul");
+toDoMain.className = "toDoMain";
 
-  listItemEl.id = todoData.id;
-  listItemEl.textContent = todoData.todo;
-  listItemEl.className = "listItem";
+//contenitore dei todo
+const todos = [];
 
-  if (todoData.completed) listItemEl.classList.add("listCompleted");
+//funzione per creare nuovo elemento todo
+function listItemGen(pippoData) {
+  const toDo = cE("li"); //creo il singolo elemento li per ogni todo
+  const removeBtn = cE("button");
 
-  buttonRemover.textContent = "x";
-  buttonRemover.classList = "buttonRemover";
+  const todoText = pippoData; //DA CONTROLLARE PERCHÈ NON SONO SICURISSSIMO
+  toDo.className = "toDo";
 
-  listItemEl.append(buttonRemover);
+  removeBtn.textContent = "x";
+  removeBtn.className = "removeBtn";
 
-  buttonRemover.addEventListener("click", () => {
-    listItemEl.remove();
+  removeBtn.addEventListener("click", () => {
+    let index = todos.indexOf(pippoData);
+    //eliminazione elemento dall'array
+    todos.splice(index, 1);
+    toDoMain.removeChild(toDo);
   });
 
-  return listItemEl;
-};
+  toDo.textContent = todoText;
 
-const listRender = () => {
-  const listItemEls = qSA(".listItem");
+  toDo.appendChild(removeBtn);
+  toDoMain.appendChild(toDo);
+}
 
-  listItemEls.forEach((element) =>
-    element.addEventListener("click", (evt) => {
-      todos.forEach((item) => {
-        if (item.id === parseInt(evt.target.id)) {
-          item.completed = !item.completed;
-          element.classList.toggle("listCompleted");
-        }
-      });
-    })
-  );
-};
+const toDoInput = cE("input");
+const addBtn = cE("button");
 
-const todoInputEL = cE("input");
-const todoButtonEL = cE("button");
-const listEl = cE("ul");
+toDoInput.className = "toDoInput";
+addBtn.textContent = "Add new task...";
+addBtn.className = "addBtn";
 
-todoInputEL.setAttribute("type", "text");
-todoInputEL.setAttribute("placeholder", "Todo text");
-todoInputEL.className = "todoInput";
-todoButtonEL.className = "todoButton";
-todoButtonEL.textContent = "Add todo";
-listEl.className = "list";
+//tasto aggiunta nuovo elemento di lista
+addBtn.addEventListener("click", function () {
+  const inputValue = toDoInput.value.trim();
 
-todos.forEach((item) => listEl.append(listItemGen(item)));
-
-document.body.append(todoInputEL, todoButtonEL, listEl);
-
-listRender();
-
-let inputValueText;
-
-todoInputEL.addEventListener("change", (event) => {
-  inputValueText = event.target.value;
+  if (inputValue !== "") {
+    listItemGen(inputValue);
+    todos.push(inputValue);
+    toDoInput.value = "";
+  }
 });
 
-todoButtonEL.addEventListener("click", () => {
-  todos.push({
-    id: Math.floor(Math.random() * 10000),
-    todo: inputValueText,
-    completed: false,
-  });
-  listEl.textContent = "";
-  todos.forEach((item) => listEl.append(listItemGen(item)));
-  listRender();
-});
+document.body.appendChild(toDoInput);
+document.body.appendChild(addBtn);
+document.body.appendChild(toDoMain);
