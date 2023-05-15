@@ -51,6 +51,10 @@ const productListTitle = cE("h2");
 const fsMain = cE("div");
 const fsSort = cE("div");
 const sortMenuBtn = cE("button");
+const sortMenuDiv = cE("div");
+const el1 = cE("a");
+const el2 = cE("a");
+const el3 = cE("a");
 const fsFilter = cE("div");
 const filterBtnPrice = cE("button");
 const filterBtnColor = cE("button");
@@ -60,10 +64,18 @@ const filterBtnReview = cE("button");
 //text content
 productListTitle.textContent = "Products for you!";
 sortMenuBtn.textContent = "Sort by";
+el1.textContent = "pippo";
+el2.textContent = "pluto";
+el3.textContent = "paperino";
 filterBtnPrice.textContent = "Price";
 filterBtnColor.textContent = "Color";
 filterBtnMaterial.textContent = "Material";
 filterBtnReview.textContent = "Review";
+
+//attributi
+el1.setAttribute("href", "#");
+el2.setAttribute("href", "#");
+el3.setAttribute("href", "#");
 
 //classi
 fsMain.className = "fs__main";
@@ -74,6 +86,10 @@ filterBtnMaterial.className = "filter__menu__btn";
 filterBtnReview.className = "filter__menu__btn";
 fsSort.className = "fs__sort";
 sortMenuBtn.className = "sort__menu__btn";
+sortMenuDiv.className = "sort__menu__div";
+el1.className = "sort__menu__links";
+el2.className = "sort__menu__links";
+el3.className = "sort__menu__links";
 productList.className = "product__list";
 
 // // con queste due righe creo due carte così anche se dummy non funziona stampo comunque qualcosa e non lascio la pagina vuota
@@ -90,14 +106,17 @@ fetch("https://dummyjson.com/products")
   ); //per i dati
 
 //appendo tutto
-fsSort.append(sortMenuBtn);
+
+rootEl.append(fsMain, productListTitle, productList);
+
+fsMain.append(fsFilter, fsSort);
+
+sortMenuDiv.append(el1, el2, el3);
+fsSort.append(sortMenuBtn, sortMenuDiv);
+
 fsFilter.append(
   filterBtnPrice,
   filterBtnColor,
   filterBtnMaterial,
   filterBtnReview
 );
-
-fsMain.append(fsFilter, fsSort);
-
-rootEl.append(fsMain, productListTitle, productList);
