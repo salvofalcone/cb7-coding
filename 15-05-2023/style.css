@@ -199,7 +199,7 @@ body {
 }
 
 .fs__sort:hover .sort__menu__btn {
-  background-color:var(--blue);
+  background-color: var(--blue);
   color: white;
 }
 
@@ -265,3 +265,34 @@ body {
   color: var(--yellow);
 }
 /**************** end products ****************/
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Inserisci il codice per tablet qui */
+}
+
+@media only screen and (max-width: 767px) {
+  .navbar {
+    display: none;
+  }
+
+  .hero {
+    margin-top: 0;
+  }
+
+  .product__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  .product_card {
+    width: 150px;
+  }
+
+  .product_card img {
+    width: 150px;
+  }
+
+  .product__card__btn {
+    width: 75px;
+  }
+}

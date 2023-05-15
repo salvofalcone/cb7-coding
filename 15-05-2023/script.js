@@ -48,13 +48,16 @@ const rootEl = qS("#root");
 //create element
 const productList = cE("div");
 const productListTitle = cE("h2");
+
 const fsMain = cE("div");
+
 const fsSort = cE("div");
 const sortMenuBtn = cE("button");
 const sortMenuDiv = cE("div");
-const el1 = cE("a");
-const el2 = cE("a");
-const el3 = cE("a");
+const sort1 = cE("a");
+const sort2 = cE("a");
+const sort3 = cE("a");
+
 const fsFilter = cE("div");
 const filterBtnPrice = cE("button");
 const filterBtnColor = cE("button");
@@ -63,33 +66,37 @@ const filterBtnReview = cE("button");
 
 //text content
 productListTitle.textContent = "Products for you!";
+
 sortMenuBtn.textContent = "Sort by";
-el1.textContent = "pippo";
-el2.textContent = "pluto";
-el3.textContent = "paperino";
+sort1.textContent = "pippo";
+sort2.textContent = "pluto";
+sort3.textContent = "paperino";
+
 filterBtnPrice.textContent = "Price";
 filterBtnColor.textContent = "Color";
 filterBtnMaterial.textContent = "Material";
 filterBtnReview.textContent = "Review";
 
 //attributi
-el1.setAttribute("href", "#");
-el2.setAttribute("href", "#");
-el3.setAttribute("href", "#");
+sort1.setAttribute("href", "#");
+sort2.setAttribute("href", "#");
+sort3.setAttribute("href", "#");
 
 //classi
 fsMain.className = "fs__main";
+
 fsFilter.className = "fs__filter";
-filterBtnPrice.className = "filter__menu__btn";
-filterBtnColor.className = "filter__menu__btn";
-filterBtnMaterial.className = "filter__menu__btn";
-filterBtnReview.className = "filter__menu__btn";
+filterBtnPrice.className = "filter__menu__btn filterBtnPrice";
+filterBtnColor.className = "filter__menu__btn filterBtnColor";
+filterBtnMaterial.className = "filter__menu__btn filterBtnMaterial";
+filterBtnReview.className = "filter__menu__btn filterBtnReview";
+
 fsSort.className = "fs__sort";
 sortMenuBtn.className = "sort__menu__btn";
 sortMenuDiv.className = "sort__menu__div";
-el1.className = "sort__menu__links";
-el2.className = "sort__menu__links";
-el3.className = "sort__menu__links";
+sort1.className = "sort__menu__links";
+sort2.className = "sort__menu__links";
+sort3.className = "sort__menu__links";
 productList.className = "product__list";
 
 // // con queste due righe creo due carte così anche se dummy non funziona stampo comunque qualcosa e non lascio la pagina vuota
@@ -111,8 +118,8 @@ rootEl.append(fsMain, productListTitle, productList);
 
 fsMain.append(fsFilter, fsSort);
 
-sortMenuDiv.append(el1, el2, el3);
 fsSort.append(sortMenuBtn, sortMenuDiv);
+sortMenuDiv.append(sort1, sort2, sort3);
 
 fsFilter.append(
   filterBtnPrice,
@@ -120,3 +127,4 @@ fsFilter.append(
   filterBtnMaterial,
   filterBtnReview
 );
+
