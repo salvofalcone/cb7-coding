@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap");
+@import url(./utils/salvo.css);
+
+body {
+  font-family: "Quicksand", sans-serif;
+  /* margin: 0 24px; */
+  /* max-width: 1440px; */
+}
+
+.main {
+  max-width: 1440px;
+  margin: auto;
+}
+
+/**************** navbar ****************/
+.navbar {
+  position: fixed;
+  height: 80px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  top: 0;
+  z-index: 9;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* box-shadow: var(--shadow); */
+}
+
+.navbar__links {
+  display: flex;
+  list-style: none;
+  gap: 16px;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.navbar__search input {
+  height: 24px;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.8);
+  cursor: text;
+}
+
+.navbar__user {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  gap: 16px;
+  padding: 0;
+}
+
+.navbar__logo {
+  width: 65px;
+  height: 65px;
+}
+
+.und__eff a {
+  text-decoration: none;
+  color: black;
+
+  background: linear-gradient(to right, #eee, #eee),
+    linear-gradient(
+      to right,
+      rgba(255, 0, 0, 1),
+      rgba(255, 0, 180, 1),
+      rgba(0, 100, 200, 1)
+    );
+  background-size: 100% 0.5px, 0 0.5px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 300ms;
+}
+
+.und__eff a:hover {
+  background-size: 0 2px, 100% 2px;
+  transition: 300ms;
+  transform: scale(1.2);
+  text-decoration: none;
+}
+/**************** end navbar ****************/
+
+/* =============================================================== */
+
+/**************** hero ****************/
+.hero {
+  margin-top: 80px;
+  background: rgb(63, 94, 251);
+  background: linear-gradient(
+    163deg,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 300px; /* perché l'immagine deve riempirla */
+}
+
+.hero img {
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  transition: all 0.35s;
+  cursor: pointer;
+}
+
+.hero__content {
+  margin: 0 80px;
+  position: relative; /* perché il genitore è relative -- il relativo ha precedenza sull'absolute*/
+  width: 50%;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.569);
+}
+
+.hero__button {
+  padding: 6px;
+  width: 120px;
+  height: 36px;
+  border-radius: 12px;
+  border: none;
+  text-transform: uppercase;
+  background-color: var(--blue);
+  color: white;
+}
+
+.hero__button:hover {
+  transition: ease-in-out 0.2s;
+  transform: scale(1.02);
+  cursor: pointer;
+  color: var(--yellow);
+}
+/**************** end hero ****************/
+
+/* =============================================================== */
+
+/**************** filter and sort ****************/
+.fs__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  margin: 12px 0;
+}
+
+.fs__main button {
+  text-transform: uppercase;
+  width: 100px;
+  height: 36px;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.fs__main button:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.filter__menu__btn {
+  background-color: #ccd1d9;
+  margin: 0 4px;
+}
+
+.sort__menu__btn {
+  background-color: var(--light-grey);
+}
+/**************** end filter and sort ****************/
+
+/* =============================================================== */
+
+/**************** products ****************/
+.product__list {
+  margin: 60px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.product_card {
+  width: 240px;
+  height: 400px;
+  border-radius: 12px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
+.product_card img {
+  width: 240px;
+  height: 120px;
+  object-fit: cover;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+}
+
+.product_card__text {
+  padding: 6px 12px;
+}
+
+.product_card__text h3 {
+  max-height: 24px;
+  overflow-y: hidden;
+}
+
+.product__card__description {
+  max-height: 60px;
+  overflow-y: hidden;
+}
+
+.product__card__btn {
+  text-transform: uppercase;
+  text-align: center;
+  width: 150px;
+  height: 36px;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+.product__card__btn:hover {
+  transition: ease-in-out 0.24s;
+  transform: scale(1.02);
+  background-color: var(--blue);
+  color: var(--yellow);
+}
+/**************** end products ****************/

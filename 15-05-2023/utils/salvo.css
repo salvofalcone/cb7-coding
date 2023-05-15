@@ -1,0 +1,8 @@
+:root {
+  --light-grey: #f0f0f0;
+  --cream: #ccc5b9;
+  --blue: #023047;
+  --yellow: #ffb703;
+
+  --shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
