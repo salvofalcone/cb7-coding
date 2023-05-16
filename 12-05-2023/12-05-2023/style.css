@@ -1,0 +1,84 @@
+@import url(./salvo.css);
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  accent-color: rgba(0, 0, 0, 0.614);
+
+}
+
+img {
+  box-shadow: inset 0 0 4px 2px rgba(0, 0, 0, 0.464);
+  padding: 2px;
+  border-radius: 8px;
+  height: 700px;
+  width: 500px;
+
+  box-shadow: var(--shadow);
+  margin: 40px 0;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
+  max-width: 700px;
+
+  margin: 40px auto;
+  box-shadow: var(--shadow);
+  border-radius: 12px;
+  transition: all 1s;
+  background-color: var(--cambridge-temp);
+
+}
+
+/* tasti */
+.button {
+  width: 60px;
+  height: 60px;
+  margin: 0 24px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: var(--shadow);
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.button:hover {
+  transform: scale(1.05);
+  transition: all 0.2s;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* radio btn */
+.dotsDiv {
+  background-color: var(--cambridge-temp);
+  border-radius: 12px;
+  width: 240px;
+  height: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  box-shadow: var(--shadow);
+}
+
+.radioBtn {
+  width: 12px;
+}
+
+.radioBtn:hover {
+  transform: scale(1.1);
+  transition: ease-in-out 0.45s;
+}
+
