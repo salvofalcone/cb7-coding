@@ -7,6 +7,19 @@ import {
   // filterSort,
 } from "./utils/fn.js";
 
+const callModal = () => {
+  {
+    const productCardEls = qSA(".product__card");
+    productCardEls.forEach((product) =>
+      product.addEventListener("click", () =>
+        fetch(`https://dummyjson.com/products/${product.id}`)
+          .then((res) => res.json())
+          .then((data) => rootEl.append(newProductModal(data, rootEl)))
+      )
+    );
+  }
+};
+
 /* const productMock = [
   {
     id: 1,
@@ -103,7 +116,7 @@ searchProductEl.addEventListener("input", (evt) => {
 // const filterBtnCategories = qS(".filterBtnCategories");
 
 // const categories=qS("#categories") --> ho inventato questa funzionalità! Funziona anche senza averlo dichiarato...perché?
-const categories=qS("#categories")
+const categories = qS("#categories");
 
 categories.addEventListener("change", (evt) => {
   if (evt.target.value === "dfl") {
@@ -115,20 +128,20 @@ categories.addEventListener("change", (evt) => {
         productListData.forEach((product) =>
           productList.append(newProduct(product))
         );
-      });
+      })
+      .then(() => callModal());
   } else {
     fetch(`https://dummyjson.com/products/category/${evt.target.value}`)
       .then((res) => res.json())
       .then((data) => {
         productList.textContent = "";
         data.products.forEach((obj) => productList.append(newProduct(obj)));
-      });
+      })
+      .then(() => callModal());
   }
 });
 
-
 // const price=qS("#price")
 //aggiungere sort by price
-
 
 rootEl.append(productListTitle, productList);
