@@ -24,6 +24,10 @@ button {
   margin: 30px auto;
 }
 
+#root {
+  margin: 0 12px;
+}
+
 /**************** navbar ****************/
 .navbar {
   position: fixed;
@@ -120,7 +124,7 @@ button {
 }
 
 .hero__content {
-  margin: 0 80px;
+  margin: 80px;
   position: relative; /* perché il genitore è relative -- il relativo ha precedenza sull'absolute*/
   width: 50%;
   color: rgb(255, 255, 255);
@@ -129,6 +133,7 @@ button {
 
 .hero__button {
   padding: 6px;
+  margin-top: 12px;
   width: 120px;
   height: 36px;
   border-radius: 12px;
@@ -149,77 +154,12 @@ button {
 /* =============================================================== */
 
 /**************** filter and sort ****************/
-/* .fs__main {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 40px;
-  margin: 12px 0;
-}
-
-.fs__main button {
-  text-transform: uppercase;
-  width: 100px;
-  height: 36px;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 18px;
-  box-shadow: var(--shadow);
-}
-
-.fs__main button:hover {
-  cursor: pointer;
-  transform: scale(1.02);
-}
-
-.filter__menu__btn {
-  background-color: #ccd1d9;
-  margin: 0 4px;
-}
-
-.fs__sort {
-  position: relative;
-  display: inline-block;
-}
-
-.sort__menu__btn {
-  background-color: var(--light-grey);
-}
-
-.sort__menu__div {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.sort__menu__div a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.sort__menu__div a:hover {
-  background-color: #ddd;
-}
-
-.fs__sort:hover .sort__menu__div {
-  display: block;
-}
-
-.fs__sort:hover .sort__menu__btn {
-  background-color: var(--blue);
-  color: white;
-}
- */
 
 .categories {
   font-family: "Quicksand", sans-serif;
   text-transform: uppercase;
-  margin: 12px 2px;
+  text-align: center;
+  margin: 12px 6px;
   padding: 8px 4px;
   border-radius: 12px;
   width: 180px;
@@ -228,7 +168,9 @@ button {
 }
 
 .categories:hover {
-  background-color: rgba(10, 10, 10, 0.156);
+  background-color: rgba(10, 10, 10, 0.08);
+  font-weight: 600;
+  transform: scale(1.02);
 }
 /**************** end filter and sort ****************/
 
@@ -308,6 +250,10 @@ button {
   cursor: pointer;
 }
 
+.modal__title {
+  margin-top: 120px;
+}
+
 /* 
 .modal__close__btn {
   margin: 4px;
@@ -347,19 +293,18 @@ button {
 
 /**************** PRODUCTS ****************/
 .product__list {
-  margin: 60px 0;
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   gap: 20px;
-  /* flex-wrap: wrap; */
-
   overflow-x: auto;
   padding: 30px;
   scroll-snap-type: x proximity;
 }
 
 .product__card {
+  display: flex;
+  flex-direction: column;
+
   width: 240px;
   height: 400px;
   border-radius: 12px;
@@ -374,7 +319,7 @@ button {
 
 .product__card img {
   width: 240px;
-  height: 120px;
+  height: 140px;
   object-fit: cover;
   border-top-right-radius: 12px;
   border-top-left-radius: 12px;
@@ -382,23 +327,27 @@ button {
 }
 
 .product__card__text {
-  padding: 6px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 18px 12px 12px;
+}
+
+.text__wrapper__mini {
+  display: flex;
+  justify-content: space-between;
 }
 
 .product__card__text h3 {
   max-height: 24px;
   overflow-y: hidden;
 }
-/* 
-.product__card__description {
-  max-height: 60px;
-  overflow-y: hidden;
-} */
 
 .product__card__btn {
   text-transform: uppercase;
   text-align: center;
-  width: 150px;
+  width: 100%;
   height: 36px;
   border: none;
   padding: 8px 16px;
@@ -462,16 +411,16 @@ button {
 }
 
 .cartModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: fixed;
   padding: 20px;
-  top: 90px;
+  top: 80px;
   right: 0;
   width: 500px;
-
-  height: 100%;
-
+  height: 90%;
   background-color: rgb(255, 255, 255);
-
   transform: translateX(1600px);
   transition: ease-in-out 250ms;
   box-shadow: var(--shadow);
@@ -498,4 +447,34 @@ button {
   top: 20px;
   right: 20px;
   cursor: pointer;
+}
+
+.card__wrapper {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+/* ========================== */
+
+.product__card__cart {
+  display: flex;
+  flex-direction: row;
+  height: 120px;
+  width: 100%;
+  margin: 12px 0;
+}
+
+.product__card__text__cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 12px;
+}
+
+.image__cart {
+  height: 120px;
+  width: 120px;
 }

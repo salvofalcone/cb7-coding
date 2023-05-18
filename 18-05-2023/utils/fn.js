@@ -10,6 +10,7 @@ export const newProduct = (data) => {
   /***** CREATE ELEMENT *****/
   const wrapperEl = cE("div");
   const textWrapperEl = cE("div");
+  const textWrapperMini = cE("div");
   const imageEl = cE("img");
   const titleEl = cE("h3");
   const descriptionEl = cE("p");
@@ -21,6 +22,7 @@ export const newProduct = (data) => {
   wrapperEl.className = "product__card";
   wrapperEl.setAttribute("id", data.id); //aggiungo questo così da avere id unico per ogni card
   textWrapperEl.className = "product__card__text";
+  textWrapperMini.className = "text__wrapper__mini";
   descriptionEl.className = "product__card__description";
   buttonEl.className = "product__card__btn";
   imageEl.src = data.thumbnail;
@@ -29,12 +31,13 @@ export const newProduct = (data) => {
   /***** TEXT CONTENT *****/
   titleEl.textContent = data.title;
   descriptionEl.textContent = noMoreText(data.description);
-  ratingEl.textContent = data.rating;
-  priceEl.textContent = data.price + "$";
+  ratingEl.textContent = data.rating + " ⭐️";
+  priceEl.textContent = "$ " + data.price;
   buttonEl.textContent = "Add to Cart";
 
   /***** APPEND *****/
-  textWrapperEl.append(titleEl, descriptionEl, ratingEl, priceEl, buttonEl);
+  textWrapperMini.append(ratingEl, priceEl);
+  textWrapperEl.append(titleEl, descriptionEl, textWrapperMini, buttonEl);
   wrapperEl.append(imageEl, textWrapperEl);
 
   return wrapperEl;
@@ -46,6 +49,7 @@ export const newProduct = (data) => {
 export const noMoreText = (str) =>
   str.split(" ").splice(0, 8).join(" ") + " ...";
 /* ==================================================================== */
+
 /* modale */
 export const newProductModal = (productData, parentEl = null) => {
   /***** CREATE ELEMENT *****/
@@ -122,15 +126,54 @@ export const newProductModal = (productData, parentEl = null) => {
 
 /* ==================================================================== */
 
+export const newProductCart = (data) => {
+  /***** CREATE ELEMENT *****/
+  const wrapperEl = cE("div");
+  const textWrapperEl = cE("div");
+  const textWrapperMini = cE("div");
+  const imageEl = cE("img");
+  const titleEl = cE("h3");
+  const descriptionEl = cE("p");
+  const priceEl = cE("h4");
+
+  /***** CLASSI e ATTRIBUTI*****/
+  wrapperEl.className = "product__card__cart";
+  wrapperEl.setAttribute("id", data.id);
+  textWrapperEl.className = "product__card__text__cart";
+  textWrapperMini.className = "text__wrapper__mini__cart";
+  descriptionEl.className = "product__card__description__cart";
+  imageEl.src = data.thumbnail;
+  imageEl.alt = data.title;
+  imageEl.className = "image__cart";
+
+  /***** TEXT CONTENT *****/
+  titleEl.textContent = data.title;
+  descriptionEl.textContent = noMoreText(data.description);
+  priceEl.textContent = "$ " + data.price;
+
+  /***** APPEND *****/
+  textWrapperMini.append(priceEl);
+  textWrapperEl.append(titleEl, descriptionEl, textWrapperMini);
+  wrapperEl.append(imageEl, textWrapperEl);
+
+  return wrapperEl;
+};
+
+/* ==================================================================== */
+
 export const createCartModal = (cartItems, parentEl = null) => {
   //stessa struttura delle altre modali
   const wrapperEl = cE("div");
   const totalItemsEl = cE("h2");
+  const cardWrapper = cE("div");
+  const textWrapper = cE("div");
 
-  const priceEl = cE("p");
+  const priceEl = cE("h4");
   const closeBtnEl = cE("button");
 
   wrapperEl.className = "cartModal";
+  cardWrapper.className = "card__wrapper";
+  textWrapper.className = "text__wrapper";
   totalItemsEl.textContent = `Products added to cart: ${cartItems.length}`;
 
   closeBtnEl.classList = "cartModal__closeBtn";
@@ -142,7 +185,10 @@ export const createCartModal = (cartItems, parentEl = null) => {
   )}`;
 
   cartItems.forEach((item) => {
-    wrapperEl.append(closeBtnEl, newProduct(item), totalItemsEl, priceEl); //analogo
+    cardWrapper.append(newProductCart(item));
+    wrapperEl.append(closeBtnEl);
+    textWrapper.append(totalItemsEl, priceEl);
+    wrapperEl.append(closeBtnEl, cardWrapper, textWrapper);
   });
 
   closeBtnEl.addEventListener("click", () => {

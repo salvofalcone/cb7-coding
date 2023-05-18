@@ -5,6 +5,7 @@ import {
   newProduct,
   newProductModal,
   createCartModal,
+  newProductCart,
   noMoreText,
 } from "./utils/fn.js";
 
