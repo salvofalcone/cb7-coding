@@ -137,7 +137,6 @@ export const newProductModal = (productData, parentEl = null) => {
     }
   });
 
-  // callModal();//NON FUNZIONA
   return wrapperEl;
 };
 
@@ -244,7 +243,6 @@ export const createLogIn = () => {
 
   wrapperEl.addEventListener("submit", (evt) => {
     evt.preventDefault();
-    console.log("form inviata");
 
     /* potrei mettere !! per averlo come booleano */
     const isAuth = !!usersList.find(
@@ -256,7 +254,8 @@ export const createLogIn = () => {
     if (isAuth) {
       rootEl.append(productListTitle, productList);
       rootEl.removeChild(wrapperEl); //riferimento al login
-      productListData.forEach((product) => newProduct(product));
+      // productListData.forEach((product) => newProduct(product));
+      reAddCards();
     } else {
       alert("Something went wrong, try again?");
     }
@@ -271,4 +270,15 @@ export const createLogIn = () => {
   );
 
   return wrapperEl;
+};
+
+const reAddCards = () => {
+  const productCardEls = qSA(".product__card");
+  productCardEls.forEach((product) =>
+    product.addEventListener("click", () =>
+      fetch(`https://dummyjson.com/products/${product.id}`)
+        .then((res) => res.json())
+        .then((data) => rootEl.append(newProductModal(data, rootEl)))
+    )
+  );
 };
