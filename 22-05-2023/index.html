@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./utils/color.css">
+    <script src="./script.js" type="module"></script>
+</head>
+
+<body>
+
+
+    <div id="intro">
+        <h1 class="intro__title">Weather App</h1>
+        <img src="./assets/logo.png " alt="Logo meteo" class="intro__img">
+        <input name="searchLocation" type="text" placeholder="Insert location" class="intro__input">
+        <button class="intro__btn">Search</button>
+    </div>
+
+
+    <div id="weatherMain" class="weather__main none">
+
+        <h2 class="location"></h2>
+        <div class="weather__top">
+            <p class="region"></p>
+            <p class="state"></p>
+        </div>
+
+        <div class="weather__mid">
+            <h3 class="degrees"></h3>
+            <p class="conditions"></p>
+        </div>
+
+        <img class="weather__img" src="" alt="weather img">
+
+        <div class="weather__bott">
+            <div class="weather__bott__container">
+                <p>Humidity</p>
+                <p class="humidity"></p>
+            </div>
+
+            <div class="weather__bott__container">
+                <p>Wind</p>
+                <p class="wind"></p>
+            </div>
+
+            <div class="weather__bott__container">
+                <p>Pressure</p>
+                <p class="pressure"></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
