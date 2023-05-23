@@ -1,13 +1,15 @@
-import { createEl, qS, cartPage, GET, productGen } from "./utils/fn.js";
+import { createEl, qS, cartPage, GET, productGen, POST } from "./utils/fn.js";
 import { usersList } from "./utils/credentials.js";
 
-/************** VARIABILI **************/
+/* ================================================================ */
+/* Variabili */
 const rootEl = qS("#root");
 const cart = createEl("div", "", {
   name: "class",
   value: "cart",
 });
 
+/* ================================================================ */
 /* Relativo alla form */
 const formEl = createEl("form", "", { name: "class", value: "login" });
 const formTitle = createEl("h2", "Log-In", {
@@ -41,7 +43,8 @@ const formSubmit = createEl(
   }
 );
 
-/************** EVENT LISTNER **************/
+/* ================================================================ */
+/* Event listener */
 formEl.addEventListener("submit", (evt) => {
   evt.preventDefault();
 
@@ -62,6 +65,11 @@ formEl.addEventListener("submit", (evt) => {
   }
 });
 
-/************** APPEND **************/
+/* ================================================================ */
+/* Append */
 formEl.append(formTitle, formUsername, formPass, formSubmit);
 rootEl.append(formEl, cart);
+
+/* ================================================================ */
+/* Ora aggiungo un elemento, vedrò il risultato da network della devtools */
+POST({title: "Bud Beer 33cl"});

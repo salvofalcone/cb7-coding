@@ -7,13 +7,27 @@ export const createEl = (type, content, ...attrs) => {
   attrs.forEach((attr) => element.setAttribute(attr?.name, attr?.value));
   return element;
 };
+/* ================================================================ */
 const BASE_URL = "https://dummyjson.com";
+
 export const GET = async (endpoint = "") => {
   const res = await fetch(BASE_URL + endpoint);
   const data = await res.json();
 
   return data;
 };
+
+export const POST = (body) => {
+  fetch("https://dummyjson.com/products/add", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  })
+    .then((res) => res.json())
+    .then(console.log); //come da documentazione questo mi stampa id 101 
+};
+
+/* ================================================================ */
 
 export const cartPage = (username) => {
   const wrapperEl = createEl("div", "", {
@@ -29,6 +43,8 @@ export const cartPage = (username) => {
 
   return wrapperEl;
 };
+
+/* ================================================================ */
 
 export const productGen = (productData) => {
   const wrapperEl = createEl("div", "", { name: "class", value: "cart__item" });
@@ -46,13 +62,18 @@ export const productGen = (productData) => {
     }
   );
 
-  const priceEl = createEl("p", "$ " + productData.price, {
-    name: "class",
-    value: "cart__item__price",
-  }, {
-    name: "class",
-    value: "cart__price",
-  });
+  const priceEl = createEl(
+    "p",
+    "$ " + productData.price,
+    {
+      name: "class",
+      value: "cart__item__price",
+    },
+    {
+      name: "class",
+      value: "cart__price",
+    }
+  );
 
   const quantityEl = createEl("p", "Stock available: " + productData.quantity, {
     name: "class",

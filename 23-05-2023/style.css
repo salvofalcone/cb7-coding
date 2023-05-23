@@ -48,7 +48,15 @@ body {
   transform: scale(1.02);
 }
 
+.hello__title {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+}
+
 .cart {
+  margin-top: 80px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -68,4 +76,9 @@ body {
   background: rgba(255, 255, 255, 0.3);
   border: none;
   box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.cart__item:hover {
+  transform: scale(1.02);
 }
