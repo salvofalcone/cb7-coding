@@ -18,16 +18,14 @@ export const POST = (inputValue) => {
       completed: false,
       userId: 5,
     }),
-  })
-    .then((res) => res.json())
-    .then(console.log);
+  }).then((res) => res.json());
+  // .then(console.log);
 };
 
 export const DELETE = (index) => {
   const indice = index === 0 ? 1 : index;
   fetch(`https://dummyjson.com/todos/${indice}`, {
     method: "DELETE",
-  })
-    .then((res) => res.json())
-    .then(console.log);
+  }).then((res) => res.json());
+  // .then(console.log);
 };
