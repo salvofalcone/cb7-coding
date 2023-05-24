@@ -31,17 +31,6 @@ console.log(nome);
 console.log(cognome);
 console.log(paese);
 
-
-
-
-
-
-
-
-
-
-
-
 /* ESERIZIO 2 */
 const libro = {
   titolo: "Il Nome della Rosa",
@@ -49,7 +38,11 @@ const libro = {
   anno: 1980,
 };
 
-const { titolo, autore, anno } = libro;
-// console.log(titolo);
-// console.log(autore);
-// console.log(anno);
+const {
+  titolo = "Non specificato",
+  autore = "Non specificato",
+  anno = "Non specificato",
+} = libro;
+console.log(titolo);
+console.log(autore);
+console.log(anno);
