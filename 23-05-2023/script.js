@@ -1,4 +1,12 @@
-import { createEl, qS, cartPage, GET, productGen, POST } from "./utils/fn.js";
+import {
+  createEl,
+  qS,
+  cartPage,
+  GET,
+  productGen,
+  POST,
+  DELETE,
+} from "./utils/fn.js";
 import { usersList } from "./utils/credentials.js";
 
 /* ================================================================ */
@@ -72,4 +80,4 @@ rootEl.append(formEl, cart);
 
 /* ================================================================ */
 /* Ora aggiungo un elemento, vedrò il risultato da network della devtools */
-POST({title: "Bud Beer 33cl"});
+POST({ title: "Bud Beer 33cl" });

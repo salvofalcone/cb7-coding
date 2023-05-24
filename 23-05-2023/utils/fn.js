@@ -24,9 +24,15 @@ export const POST = (body) => {
     body: JSON.stringify(body),
   })
     .then((res) => res.json())
-    .then(console.log); //come da documentazione questo mi stampa id 101 
+    .then(console.log); //come da documentazione questo mi stampa id 101
 };
 
+export const DELETE = async (endpoint) => {
+  const res = await fetch(BASE_URL + endpoint, {
+    method: "DELETE",
+  });
+  const data = await res.json();
+};
 /* ================================================================ */
 
 export const cartPage = (username) => {
