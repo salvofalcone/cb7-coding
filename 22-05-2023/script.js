@@ -19,18 +19,6 @@ const wind = qS(".wind");
 const pressure = qS(".pressure");
 
 /* FUNZIONI */
-const changeInfo = (data) => {
-  location.textContent = data.location.name;
-  region.textContent = data.location.region + "," + " ";
-  state.textContent = data.location.country;
-  degrees.textContent = data.current.temp_c + "°C";
-  conditions.textContent = data.current.condition.text;
-  img.src = data.current.condition.icon;
-  humidity.textContent = data.current.humidity + "%";
-  wind.textContent =data.current.wind_mph + " " + data.current.wind_dir;
-  pressure.textContent =data.current.pressure_mb +"mb";
-};
-
 const newData = async (userSearch) => {
   const res = await fetch(
     `http://api.weatherapi.com/v1/current.json?key=b6864d43b09940acb6c130603232205&q=${userSearch}&aqi=no&lang=it`
@@ -43,6 +31,24 @@ const newData = async (userSearch) => {
   return data;
 };
 
+/* Aggiornamento info in base alla località */
+const changeInfo = (data) => {
+  location.textContent = data.location.name;
+  region.textContent = data.location.region + "," + " ";
+  state.textContent = data.location.country;
+  degrees.textContent = data.current.temp_c + "°C";
+  if (data.current.temp_c >= 18) {
+    document.body.classList.add("sunny");
+  } else {
+    document.body.classList.add("rainy");
+  }
+  conditions.textContent = data.current.condition.text;
+  img.src = data.current.condition.icon;
+  humidity.textContent = data.current.humidity + "%";
+  wind.textContent = data.current.wind_mph + " " + data.current.wind_dir;
+  pressure.textContent = data.current.pressure_mb + "mb";
+};
+
 /* EVENT LISTENER */
 searchBtn.addEventListener("click", () => {
   let userSearch = search.value;
@@ -51,6 +57,3 @@ searchBtn.addEventListener("click", () => {
 
   newData(userSearch);
 });
-
-
-
