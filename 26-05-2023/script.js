@@ -43,10 +43,10 @@ const startApp = () => {
   });
 };
 
-const removeAll = () => {
-  localStorage.clear();
-  toDoMain.textContent = "";
-};
+// const removeAll = () => {
+//   localStorage.clear();
+//   toDoMain.textContent = "";
+// };
 
 const switchModeClass = () => {
   document.body.classList.toggle("dark__body");
@@ -54,7 +54,7 @@ const switchModeClass = () => {
   toDoMain.classList.toggle("dark__toDoMain");
   toDoInput.classList.toggle("dark__toDoInput");
 };
-/*     <button class="clearAll">Clear All</button> */
+
 /************************* Creazione struttura *************************/
 const toDoMain = createEl("ul", "", { name: "class", value: "toDoMain" });
 
@@ -76,7 +76,7 @@ const addBtn = createEl("button", "Add", {
 });
 
 const switchMode = qS(".input");
-const clearAll = qS(".clearAll");
+// const clearAll = qS(".clearAll");
 
 export let todos = JSON.parse(localStorage.getItem("todos")) || [];
 
@@ -87,7 +87,7 @@ switchMode.addEventListener("change", () => switchModeClass());
 
 addBtn.addEventListener("click", () => addToDo());
 
-clearAll.addEventListener("click", () => removeAll());
+// clearAll.addEventListener("click", () => removeAll());
 
 /************************* APPEND *************************/
 document.body.append(title, toDoInput, addBtn, toDoMain);
