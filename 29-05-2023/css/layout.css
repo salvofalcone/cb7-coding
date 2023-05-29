@@ -7,40 +7,9 @@
   justify-content: space-between;
 }
 
-.mainContent {
-  height: 300vh;
-}
-
 @media screen and (max-width: 1024px) {
   .mainContent {
     width: calc(100% - 88px);
-  }
-
-  .navCta__link {
-    width: fit-content;
-  }
-
-  .navLink__label {
-    display: none;
-  }
-
-  .navCta__link__label {
-    display: none;
-  }
-
-  .navCta__link__icon svg {
-    fill: var(--color-text);
-    width: 24px;
-    height: 24px;
-    width: fit-content;
-  }
-
-  .profileBtn__user{
-    display: none;
-  }
-
-  .profileBtn__actions{
-    display: none;
   }
 }
 
@@ -52,7 +21,7 @@
   }
 
   .mainContent {
-    width: 70%;
+    width: 75%;
     display: flex;
     justify-content: space-between;
   }
@@ -63,13 +32,5 @@
 
   .sidebar {
     width: 40%;
-  }
-
-  .navCta__link {
-    width: 80%;
-  }
-
-  .navCta__link__icon {
-    display: none;
   }
 }

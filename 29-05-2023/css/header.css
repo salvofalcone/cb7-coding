@@ -2,7 +2,7 @@ header {
   position: sticky; /* da cambiare in fixed */
   top: 0;
   height: 100vh;
-  width: 30%;
+  width: 25%;
   padding: 12px;
   display: flex;
   flex-direction: column;
@@ -27,9 +27,6 @@ header svg {
 /***************** logo *****************/
 .logo {
   padding: 12px;
-}
-
-.logo svg {
   cursor: pointer;
 }
 
@@ -37,6 +34,7 @@ header svg {
   background-color: var(--color-hover);
   border-radius: 24px;
   width: fit-content;
+  transition: all 150ms ease-in-out;
 }
 
 /***************** nav links *****************/
@@ -51,6 +49,7 @@ header svg {
   background-color: var(--color-hover);
   border-radius: 24px;
   width: fit-content;
+  transition: all 150ms ease-in-out;
 }
 
 /***************** cta tweet *****************/
@@ -80,6 +79,11 @@ header svg {
   border-radius: 100px;
 }
 
+.profileBtn:hover {
+  background-color: var(--color-hover);
+  transition: all 150ms ease-in-out;
+}
+
 .profileBtn__image {
   height: 50px;
   width: 50px;
@@ -95,16 +99,69 @@ header svg {
 
 .profileBtn__content {
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 80%;
   height: 100%;
-  gap: 12px;
+}
+
+.profileBtn__user {
+  padding-left: 12px;
 }
 
 .profileBtn__nickname {
   color: var(--color-grey);
 }
 
-/* classi per toggle */
+/***************** classi per toggle *****************/
 .active svg {
   fill: var(--color-brand);
+}
+
+/***************** media *****************/
+
+@media screen and (max-width: 1024px) {
+  .navCta__link {
+    width: fit-content;
+  }
+
+  .navLink__label {
+    display: none;
+  }
+
+  .navCta__link__label {
+    display: none;
+  }
+
+  .navCta__link__icon svg {
+    fill: var(--color-text);
+    width: 24px;
+    height: 24px;
+    width: fit-content;
+  }
+
+
+  .profileBtn{
+    width: fit-content;
+    justify-content: center;
+  }
+
+  .profileBtn__user {
+    display: none;
+  }
+
+  .profileBtn__actions {
+    display: none;
+  }
+}
+
+/* media query desktop */
+@media screen and (min-width: 1025px) {
+  .navCta__link {
+    width: 80%;
+  }
+
+  .navCta__link__icon {
+    display: none;
+  }
 }
