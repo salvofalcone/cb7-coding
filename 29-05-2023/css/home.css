@@ -1,0 +1,14 @@
+.home {
+  width: 100%;
+  border: 2px solid red;
+}
+.mainHome {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.home__sections {
+  display: flex;
+  justify-content: space-between;
+}
+  
