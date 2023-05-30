@@ -1,0 +1,72 @@
+.home {
+  /* QUESTO è il mio contenitore principale */
+  width: 70%; /* da controllare questo! */
+  border: 0.5px solid var(--color-light-grey);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mainHome {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  
+
+  border-bottom: 0.5px solid var(--color-light-grey);
+}
+
+.home__newTweet {
+  border-bottom: 0.5px solid var(--color-light-grey);
+}
+
+/**************************** tweets feed main container ****************************/
+.feed {
+  /* border: 2px solid violet; */
+  display: flex;
+  flex-direction: column;
+}
+
+/* singolo tweet dentro il contenitore feed */
+.tweet {
+  display: flex;
+  padding: 12px;
+  border-bottom: 0.5px solid var(--color-light-grey);
+}
+
+.tweet img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  background-color: var(--color-text);
+}
+
+.tweet__content {
+  padding-left: 8px;
+}
+
+.tweet__name {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding-right: 4px;
+}
+
+.tweet__user {
+  color: var(--color-grey);
+  padding-right: 4px;
+}
+
+.tweet_text {
+  padding: 4px 0;
+}
+
+.tweet__reactions {
+  color: var(--color-grey);
+}
+
+.tweet__reactions__svg svg{
+  fill: red;
+  width: 30px;
+}
