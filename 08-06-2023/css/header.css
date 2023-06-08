@@ -1,0 +1,100 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99;
+
+  position: sticky;
+  top: 0;
+  height: var(--nav-height);
+
+  background: rgba(0, 0, 0, 0.14);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  padding: 0 24px;
+}
+
+svg {
+  height: 30px;
+}
+
+.header__attribution {
+  cursor: pointer;
+}
+
+.main__title {
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translateX(-33%); /* ! stra-fastidioso visivamente altrimenti */
+
+  /* relative to h1 element */
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #bd1111;
+  text-align: center;
+  letter-spacing: 2.5px;
+  text-shadow: -1px -1px 3px #ffffff05, 2px 2px 4px #ffffff05;
+}
+
+/* input search bar */
+.container {
+  background-color: var(--color-main);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  position: relative;
+}
+
+.container .label {
+  font-size: 15px;
+  padding-left: 10px;
+  position: absolute;
+  top: 12px;
+  transition: 0.3s;
+  pointer-events: none;
+  color: var(--color-grey);
+}
+
+.input {
+  width: 220px;
+  height: 45px;
+  border: none;
+  outline: none;
+  padding: 0px 7px;
+  border-radius: 6px;
+  color: var(--color-grey);
+
+  font-size: 15px;
+  background-color: transparent;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.input:focus {
+  border: 2px solid transparent;
+  color: #fff;
+
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4), inset 3px 3px 10px rgba(0, 0, 0, 1),
+    inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.container .input:valid ~ .label,
+.container .input:focus ~ .label {
+  transition: 0.3s;
+  padding-left: 2px;
+  display: none;
+}
+
+.container .input:valid,
+.container .input:focus {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4), inset 3px 3px 10px rgba(0, 0, 0, 1),
+    inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}

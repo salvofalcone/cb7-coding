@@ -1,0 +1,33 @@
+.info__section {
+  position: fixed;
+  width: 200px;
+  color: var(--color-grey);
+  /* text-transform: uppercase; */
+}
+
+ul {
+  list-style-type: none;
+}
+
+.info__title{
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding-bottom: 8px;
+  cursor:default;
+}
+
+.info__section li {
+  padding-bottom: 4px;
+}
+
+.info__section li:hover {
+  color: var(--color-white);
+  cursor: pointer;
+  transition: 350ms linear;
+  padding-left: 12px;
+}
+
+.activeGenre{
+  color: red;
+}
